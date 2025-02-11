@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katta Chetan Redddy</title>
+    <link rel="stylesheet" href="style.css" >
+    <script src="https://kit.fontawesome.com/857d06e8b3.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo2.jpg" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="https://github.com/chetan288">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://drive.google.com/file/d/1HPpM8KLPpeo-REIEz8CrHGvHDcDI1zaE/view?usp=drivesdk">Resume</a></li>
+                </ul>
+            </nav>
+            <div class="headtext">
+                <p>Software Developer</p>
+                <h1>Hello,I am <span>Chetan</span><br>Reddy Katta</h1>
+            </div>
+        </div>
+    </div>
+<div id="about">
+    <div class="container">
+        <div class="row">
+        <div class="about1">
+            <img src="images/1_0FqDC0_r1f5xFz3IywLYRA.jpg">
+        </div>
+        <div class="about2">
+            <h1>About me</h1>
+            <p>Motivated and detail-oriented Java Full Stack Developer with a strong foundation in Java, Spring Boot, React.js, and RESTful APIs. Passionate about designing and developing scalable, high-performance applications using microservices architecture. Proficient in front-end and back-end technologies, cloud platforms like AWS, and database management with MySQL and MongoDB. Adept at problem-solving, writing clean and efficient code, and collaborating in agile environments to deliver high-quality software solutions.</p>
+            <div class="tabtitle">
+                <P class="tablink active-link"onclick="opentab('Education')">Education</P>
+                <P class="tablink" onclick="opentab('Skills')">Skills</P>
+                <P class="tablink"onclick="opentab('Experience')">Experience</P>
+            </div>
+            <div class="tabcontent" id="Skills">
+               <ul>
+                <li><span>Java Full Stack</span><br>Java, Spring Boot, REST API, AWS, MySQL, CI/CD, Git.</li>
+                <li><span>Data Analysis</span><br>Python, Pandas, NumPy, SQL, Power BI, MS Excel,Data Cleaning</li>
+               </ul>
+            </div>
+            <div class="tabcontent active-tab" id="Education">
+                <ul>
+                 <li><span>Bachelor of Technology</span><br>Geethanjali College of Engineering and Technology<br>CSE 2020-2024</li>
+                 <li><span>Class 12</span><br>Narayana junior college<br>MPC 2018-2020</li>
+                 <li><span>Class 10</span><br>St.Solomon High School<br>General 2017-2018 </li>
+                </ul>
+             </div>
+             <div class="tabcontent" id="Experience">
+                <ul>
+                 <li><span>Web Development Intern</span><br>Worinwell<br>Remote <br>Aug 2023-Dec 2023</li>
+
+                </ul>
+             </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contactleft">
+                <h1 class="subt">Contact Info</h1>
+                <p><i class="fa-regular fa-envelope"></i>chetanreddykatta@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>+91-7569113041</p>
+                <div class="socialicon">
+                    <a href="https://www.linkedin.com/in/katta-chetan-1b830b201/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/chetan288"><i class="fa-brands fa-github"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+                </div>
+            </div>
+            <div class="contactright">
+            <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Yourname" required>
+            <input type="email" name="email" placeholder="your email" required>
+            <textarea name="messege" rows="5" placeholder="your messege"></textarea>
+            <button class="submit" type="submit">Submit</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="copyright">
+    <p>copyright © This page belongs to katta chetan reddy</p>
+</div>
+<script>
+    var tabli=document.getElementsByClassName("tablink");
+    var tabc=document.getElementsByClassName("tabcontent");
+    function opentab(tabname){
+        for(tablink of tabli){
+            tablink.classList.remove("active-link");
+        }
+        for(tablic of tabc){
+            tablic.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx7hlH7lraQ0zc1u4GhjttW7eK9D5D9W7qfCrjahb_0FEGrIfgfM_DG6HvMpeFvippeTg/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
